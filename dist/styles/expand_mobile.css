@@ -1,0 +1,2892 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  outline: unset;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+htmlbody, bodybody {
+  overflow: hidden;
+}
+htmlbody.cover, bodybody.cover {
+  background-color: #000;
+}
+
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+video::-webkit-media-controls-play-button,
+.IIV::-webkit-media-controls-play-button,
+video::-webkit-media-controls-start-playback-button {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 5px !important;
+  display: none !important;
+}
+
+.player-wrapper {
+  overflow: hidden;
+  cursor: auto;
+}
+.player-wrapper.disabled {
+  display: none;
+}
+.player-wrapper.no-progressbar .player-seekbar-wrapper {
+  display: none !important;
+}
+.player-wrapper.cursor-pointer {
+  cursor: pointer;
+}
+.player-wrapper.fullscreen {
+  width: 100% !important;
+  height: 100% !important;
+  top: 0 !important;
+  left: 0 !important;
+  bottom: auto !important;
+  right: auto !important;
+  position: absolute !important;
+  margin: 0 !important;
+  background: black !important;
+  -ms-transform: unset !important;
+      transform: unset !important;
+  outline: unset !important;
+  border: unset !important;
+  border-radius: 0px !important;
+  overflow: visible !important;
+}
+.player-wrapper.fullscreen .player-video {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.player-gui-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  transition: opacity 120ms linear;
+  opacity: 0;
+}
+.player-gui-wrapper:hover {
+  opacity: 1;
+}
+
+.player-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  background: #000;
+  object-fit: fill;
+}
+
+.player-anchor {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+}
+
+.player-endboard-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  display: none !important;
+  background-size: cover !important;
+}
+.player-endboard-wrapper.active {
+  display: block !important;
+}
+.player-endboard-wrapper .player-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  background-color: rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+}
+.player-endboard-wrapper .player-replay-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  opacity: 0.9;
+  transition: opacity 0.3s ease-in-out;
+  cursor: pointer;
+}
+.player-endboard-wrapper .player-replay-wrapper:hover {
+  opacity: 1;
+}
+.player-endboard-wrapper .player-replay-wrapper .player-replay-content-wrapper {
+  pointer-events: none;
+}
+
+.social-anchor {
+  opacity: 0.9;
+  -ms-transform: scale(1);
+      transform: scale(1);
+  transition: transform 120ms 120ms ease-out, opacity 120ms 120ms linear;
+  pointer-events: none;
+}
+.social-anchor circle {
+  pointer-events: auto;
+  fill: #fdeada;
+}
+.social-anchor:hover {
+  transition: transform 120ms ease-out, opacity 120ms linear;
+  -ms-transform: scale(0.95);
+      transform: scale(0.95);
+  opacity: 1;
+}
+.social-anchor path {
+  fill: #000;
+}
+
+.player-gui-wrapper {
+  -ms-transform: scale(1.0001);
+      transform: scale(1.0001);
+  overflow: hidden;
+}
+.player-gui-wrapper > .player-seekbar-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  top: 0%;
+  left: 0%;
+  top: auto;
+  bottom: -2px;
+  background: rgba(253, 234, 218, 0);
+  overflow: hidden;
+  pointer-events: none;
+  transform: translateZ(0);
+}
+.player-gui-wrapper > .player-seekbar-wrapper .player-progressbar {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  background: #fdeada;
+  pointer-events: none;
+  -ms-transform: translateX(-100%);
+      transform: translateX(-100%);
+}
+.player-gui-wrapper .player-resume {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+.player-gui-wrapper .player-resume.active {
+  display: none;
+}
+.player-gui-wrapper .player-resume .player-resume-circle {
+  stroke-width: 4;
+  stroke: #fdeada;
+  fill: rgba(0, 0, 0, 0.2);
+}
+.player-gui-wrapper .player-resume path {
+  fill: #fdeada;
+}
+.player-gui-wrapper .player-volume-icon-wrapper {
+  position: absolute;
+  width: 4vw;
+  height: 4vw;
+  top: 2vw;
+  left: 0;
+  min-width: 40px;
+  min-height: 40px;
+  max-width: 53px;
+  max-height: 53px;
+  left: auto;
+  right: 2vw;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: opacity 0.3s ease-in-out;
+}
+.player-gui-wrapper .player-volume-icon-wrapper:hover {
+  opacity: 1;
+}
+.player-gui-wrapper .player-volume-icon-wrapper.hidden {
+  opacity: 0;
+}
+.player-gui-wrapper .player-volume-icon-wrapper.disabled {
+  display: none;
+}
+.player-gui-wrapper .player-volume-icon-wrapper svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  fill: #fdeada;
+}
+.player-gui-wrapper .player-volume-icon-wrapper svg .player-volume-icon-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  fill: rgba(0, 0, 0, 0.2);
+}
+.player-gui-wrapper .player-volume-icon-wrapper .player-sound-on {
+  opacity: 0;
+}
+.player-gui-wrapper .player-volume-icon-wrapper .player-sound-off {
+  opacity: 1;
+}
+.player-gui-wrapper .player-volume-icon-wrapper.sound-on .player-sound-on {
+  opacity: 1;
+}
+.player-gui-wrapper .player-volume-icon-wrapper.sound-on .player-sound-off {
+  opacity: 0;
+}
+.player-gui-wrapper .player-controls-wrapper {
+  position: absolute;
+  width: 100%;
+  height: calc(0.7 * 30px + 20px + 1vw + 0.25vw);
+  top: 0%;
+  left: 50%;
+  top: auto;
+  bottom: 0;
+  transform: translate3d(-50%, 0, 0) scale(1.0001);
+  overflow: hidden;
+}
+.player-gui-wrapper .player-controls-wrapper [class*='-wrapper'] {
+  overflow: hidden;
+}
+.player-gui-wrapper .player-controls-wrapper .player-resume-wrapper, .player-gui-wrapper .player-controls-wrapper .player-volume-wrapper, .player-gui-wrapper .player-controls-wrapper .player-seekbar-area-wrapper {
+  opacity: 0.9;
+  transition: opacity 0.3s ease-in-out;
+}
+.player-gui-wrapper .player-controls-wrapper .player-resume-wrapper:hover, .player-gui-wrapper .player-controls-wrapper .player-volume-wrapper:hover, .player-gui-wrapper .player-controls-wrapper .player-seekbar-area-wrapper:hover {
+  opacity: 1;
+}
+.player-gui-wrapper .player-controls-wrapper .player-seekbar-area-wrapper:hover {
+  opacity: 1;
+}
+.player-gui-wrapper .player-controls-wrapper .player-seekbar-area-wrapper:hover .player-seekbar-wrapper {
+  background-color: rgba(253, 234, 218, 0.4);
+}
+.player-gui-wrapper .player-controls-wrapper .player-seekbar-area-wrapper:hover .player-progressbar {
+  background-color: rgba(253, 234, 218, 0.8);
+}
+.player-gui-wrapper .player-controls-wrapper .player-controls-overlay {
+  position: absolute;
+  width: 102%;
+  height: calc(0.7 * 30px + 20px + 1vw + 0.25vw);
+  top: 0%;
+  left: 50%;
+  top: auto;
+  bottom: 0;
+  transform: translate3d(-50%, 3%, 0);
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+}
+.player-gui-wrapper .player-controls-wrapper .player-controls-bottom-wrapper {
+  width: 97%;
+  position: absolute;
+  width: calc(100% - 2 * 3% + 10px);
+  height: calc(20px + 0.25vw + 1vw);
+  top: 0%;
+  left: calc(3% - 10px);
+  top: auto;
+  bottom: 0;
+  pointer-events: none;
+}
+.player-gui-wrapper .player-controls-wrapper .player-seekbar-area-wrapper {
+  width: 97%;
+  position: relative;
+  width: calc(100% - 2 * 3%);
+  height: 30px;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.player-gui-wrapper .player-controls-wrapper .player-seekbar-area-wrapper .player-seekbar-wrapper, .player-gui-wrapper .player-controls-wrapper .player-seekbar-area-wrapper .player-progressbar {
+  transition: background-color 0.3s ease-in-out;
+}
+.player-gui-wrapper .player-controls-wrapper .player-seekbar-area-wrapper .player-seekbar-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+  background-color: rgba(253, 234, 218, 0.3);
+  border-radius: 5px;
+  overflow: hidden;
+  pointer-events: none;
+}
+.player-gui-wrapper .player-controls-wrapper .player-seekbar-area-wrapper .player-progressbar {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  pointer-events: none;
+  -ms-transform: translateX(-100%);
+      transform: translateX(-100%);
+  background-color: rgba(253, 234, 218, 0.6);
+}
+.player-gui-wrapper .player-controls-wrapper .player-resume-wrapper, .player-gui-wrapper .player-controls-wrapper .player-volume-wrapper {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  pointer-events: auto;
+}
+.player-gui-wrapper .player-controls-wrapper .player-resume-wrapper svg, .player-gui-wrapper .player-controls-wrapper .player-volume-wrapper svg {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+}
+.player-gui-wrapper .player-controls-wrapper .player-resume-wrapper svg path, .player-gui-wrapper .player-controls-wrapper .player-volume-wrapper svg path {
+  fill: #fdeada;
+}
+.player-gui-wrapper .player-controls-wrapper .player-resume-wrapper .player-play, .player-gui-wrapper .player-controls-wrapper .player-resume-wrapper .player-sound-off, .player-gui-wrapper .player-controls-wrapper .player-volume-wrapper .player-play, .player-gui-wrapper .player-controls-wrapper .player-volume-wrapper .player-sound-off {
+  opacity: 1;
+}
+.player-gui-wrapper .player-controls-wrapper .player-resume-wrapper .player-pause, .player-gui-wrapper .player-controls-wrapper .player-resume-wrapper .player-sound-on, .player-gui-wrapper .player-controls-wrapper .player-volume-wrapper .player-pause, .player-gui-wrapper .player-controls-wrapper .player-volume-wrapper .player-sound-on {
+  opacity: 0;
+}
+.player-gui-wrapper .player-controls-wrapper .player-resume-wrapper {
+  padding: 0.25vw 10px 1vw 10px;
+  left: calc(3% - 10px);
+}
+.player-gui-wrapper .player-controls-wrapper .player-resume-wrapper.active .player-play {
+  opacity: 0;
+}
+.player-gui-wrapper .player-controls-wrapper .player-resume-wrapper.active .player-pause {
+  opacity: 1;
+}
+.player-gui-wrapper .player-controls-wrapper .player-volume-wrapper {
+  padding: 0.25vw 10px 1vw 10px;
+}
+.player-gui-wrapper .player-controls-wrapper .player-volume-wrapper.sound-on .player-sound-off {
+  opacity: 0;
+}
+.player-gui-wrapper .player-controls-wrapper .player-volume-wrapper.sound-on .player-sound-on {
+  opacity: 1;
+}
+.player-gui-wrapper .player-controls-wrapper .player-timebar {
+  height: 20px;
+  margin: 0.25vw 0 0 0;
+  padding-right: 5px;
+  color: #fdeada;
+  font-size: 12px;
+  font-family: helvetica, verdana, arial, sans-serif;
+  line-height: 20px;
+  opacity: 0.9;
+  pointer-events: none;
+  -webkit-font-smoothing: antialiased;
+  float: right;
+}
+
+.player-endboard-wrapper {
+  -ms-transform: scale(1.0001);
+      transform: scale(1.0001);
+}
+.player-endboard-wrapper .player-replay-wrapper .player-replay-content-wrapper {
+  position: absolute;
+  width: 250px;
+  height: 50px;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+}
+.player-endboard-wrapper .player-replay-wrapper .player-replay-content-wrapper .player-replay {
+  position: absolute;
+  width: auto;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  fill: #fdeada;
+}
+.player-endboard-wrapper .player-replay-wrapper .player-replay-content-wrapper .player-text {
+  position: absolute;
+  width: 200px;
+  height: 21px;
+  top: 50%;
+  left: 0;
+  left: auto;
+  right: 0;
+  color: #fff;
+  font-size: 21px;
+  font-family: helvetica, verdana, arial, sans-serif;
+  line-height: 20px;
+  -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+  text-align: right;
+  font-weight: 600;
+  color: #fdeada;
+}
+.player-endboard-wrapper .player-socials-wrapper {
+  position: relative;
+  width: 114px;
+  height: 30px;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, 5vw);
+      transform: translate(-50%, 5vw);
+  text-align: center;
+  overflow: hidden;
+}
+.player-endboard-wrapper .player-socials-wrapper:hover {
+  overflow: visible;
+}
+.player-endboard-wrapper .player-socials-wrapper:hover .player-share {
+  opacity: 1;
+}
+.player-endboard-wrapper .player-socials-wrapper svg {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  top: 0%;
+  left: 0%;
+  margin: 0 4px;
+}
+.player-endboard-wrapper .player-socials-wrapper .player-share {
+  color: #fdeada;
+  font-size: 12px;
+  font-family: helvetica, verdana, arial, sans-serif;
+  line-height: 12px;
+  margin: 8px 0 0 0;
+  height: 12px;
+  transition: opacity 120ms linear;
+  opacity: 0;
+}
+
+.player-gui-wrapper .player-socials-wrapper {
+  margin-left: 10px;
+  margin-top: 10px;
+  width: 25px;
+  position: absolute;
+}
+.player-gui-wrapper .player-socials-wrapper a {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  top: 0;
+  left: 0;
+  display: inline-block;
+}
+.player-gui-wrapper .player-socials-wrapper svg {
+  position: absolute;
+  width: 87.5px;
+  height: 25px;
+  top: 0%;
+  left: 0%;
+  -ms-transform-origin: 10px 50%;
+      transform-origin: 10px 50%;
+  display: block;
+}
+.player-gui-wrapper .player-socials-wrapper svg g {
+  opacity: 0;
+  transition: opacity 120ms linear;
+}
+.player-gui-wrapper .player-socials-wrapper svg g rect {
+  fill: rgba(0, 0, 0, 0.75);
+}
+.player-gui-wrapper .player-socials-wrapper svg g text {
+  color: #fff;
+  font-size: 13px;
+  font-family: helvetica, verdana, arial, sans-serif;
+  line-height: 13px;
+  fill: #fdeada;
+}
+.player-gui-wrapper .player-socials-wrapper .social-anchor:hover g {
+  opacity: 1;
+  transition: opacity 250ms 120ms linear;
+}
+.player-gui-wrapper .player-socials-wrapper.right-side {
+  left: auto;
+  right: 0;
+  margin-left: 0;
+  margin-right: 10px;
+}
+.player-gui-wrapper .player-socials-wrapper.right-side svg {
+  -ms-transform-origin: 120px 50%;
+      transform-origin: 120px 50%;
+  left: auto;
+  right: 0;
+}
+
+.player-wrapper.mobile .player-endboard-wrapper {
+  -ms-transform: scale(1.0001);
+      transform: scale(1.0001);
+}
+.player-wrapper.mobile .player-endboard-wrapper .player-replay-wrapper .player-replay-content-wrapper {
+  position: absolute;
+  width: 200px;
+  height: 40px;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+}
+.player-wrapper.mobile .player-endboard-wrapper .player-replay-wrapper .player-replay-content-wrapper .player-replay {
+  position: absolute;
+  width: auto;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  fill: #fdeada;
+}
+.player-wrapper.mobile .player-endboard-wrapper .player-replay-wrapper .player-replay-content-wrapper .player-text {
+  position: absolute;
+  width: 160px;
+  height: 16.8px;
+  top: 50%;
+  left: 0;
+  left: auto;
+  right: 0;
+  color: #fff;
+  font-size: 16.8px;
+  font-family: helvetica, verdana, arial, sans-serif;
+  line-height: 15.8px;
+  -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+  text-align: right;
+  font-weight: 600;
+  color: #fdeada;
+}
+.player-wrapper.mobile .player-endboard-wrapper .player-socials-wrapper {
+  position: relative;
+  width: 91.2px;
+  height: 24px;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, 5vw);
+      transform: translate(-50%, 5vw);
+  text-align: center;
+  overflow: hidden;
+}
+.player-wrapper.mobile .player-endboard-wrapper .player-socials-wrapper:hover {
+  overflow: visible;
+}
+.player-wrapper.mobile .player-endboard-wrapper .player-socials-wrapper:hover .player-share {
+  opacity: 1;
+}
+.player-wrapper.mobile .player-endboard-wrapper .player-socials-wrapper svg {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  top: 0%;
+  left: 0%;
+  margin: 0 3.2px;
+}
+.player-wrapper.mobile .player-endboard-wrapper .player-socials-wrapper .player-share {
+  color: #fdeada;
+  font-size: 9.6px;
+  font-family: helvetica, verdana, arial, sans-serif;
+  line-height: 9.6px;
+  margin: 6.4px 0 0 0;
+  height: 9.6px;
+  transition: opacity 120ms linear;
+  opacity: 0;
+}
+
+.player-wrapper.gui-visible .player-gui-wrapper {
+  opacity: 1 !important;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(7deg);
+  }
+  50% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+@keyframes head {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(7deg);
+  }
+  50% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+@keyframes arrow {
+  0% {
+    transform: translate(0);
+  }
+  25% {
+    transform: translate(8%);
+  }
+  50% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+@keyframes translate {
+  0% {
+    transform: translate(0);
+  }
+  25% {
+    transform: translateY(-7%);
+  }
+  50% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+@keyframes translate2 {
+  0% {
+    transform: translate(0);
+  }
+  25% {
+    transform: translateY(7%);
+  }
+  50% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+.hide {
+  opacity: 0;
+}
+
+#expand-workspace {
+  transition: all .5s ease;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  background-color: transparent;
+  max-width: 1280px;
+  max-height: 1280px;
+  -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+}
+#expand-workspace #background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+}
+#expand-workspace #header {
+  position: absolute;
+  width: 100vw;
+  height: 34.7222222222vw;
+  top: 50%;
+  left: 50%;
+  margin: -60.7638888889vw 0 0 -50vw;
+}
+#expand-workspace #player-wrapper-1 {
+  z-index: -1;
+  position: absolute;
+  width: 100vw;
+  height: 56.25vw;
+  top: 39%;
+  left: 50%;
+  max-width: 720px;
+  max-height: 405px;
+  -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+  pointer-events: all;
+}
+#expand-workspace img {
+  position: absolute;
+  z-index: 1;
+}
+#expand-workspace .hide {
+  opacity: 0;
+}
+#expand-workspace .bg {
+  transition: all .5s ease;
+  width: 177.7777777778%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+}
+#expand-workspace .bg.position {
+  -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+}
+#expand-workspace .intro {
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s ease;
+}
+#expand-workspace .intro .introLeaf {
+  transition: all .5s ease;
+  width: 18.5%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+}
+#expand-workspace .intro .introLeaf.position {
+  -ms-transform: translate(-61.5%, -71%);
+      transform: translate(-61.5%, -71%);
+}
+#expand-workspace .intro .introLeaf.hide {
+  opacity: 0;
+}
+#expand-workspace .intro .introLeaf.move {
+  -ms-transform: translate(-51.5%, -269%);
+      transform: translate(-51.5%, -269%);
+}
+#expand-workspace .intro .introArrow {
+  transition: all .5s ease;
+  width: 85%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+}
+#expand-workspace .intro .introArrow.position {
+  -ms-transform: translate(-52%, -69%);
+      transform: translate(-52%, -69%);
+}
+#expand-workspace .intro .introArrow.hide {
+  -ms-transform: translate(-230%, -50%);
+      transform: translate(-230%, -50%);
+}
+#expand-workspace .intro .introArrow.deActive {
+  opacity: 0;
+}
+#expand-workspace .intro .introArrow.move {
+  -ms-transform: translate(-51.5%, -269%);
+      transform: translate(-51.5%, -269%);
+}
+#expand-workspace .intro .introClaimBottom {
+  transition: all .5s ease;
+  width: 87%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+}
+#expand-workspace .intro .introClaimBottom.position {
+  -ms-transform: translate(-50%, 85%);
+      transform: translate(-50%, 85%);
+}
+#expand-workspace .intro .introClaimBottom.hide {
+  opacity: 0;
+}
+#expand-workspace .intro .introClaimBottom.deActive {
+  -ms-transform: translate(-50%, 10%);
+      transform: translate(-50%, 10%);
+  opacity: 0;
+}
+#expand-workspace .intro .introClaimTop {
+  transition: all .5s ease;
+  width: 87%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+}
+#expand-workspace .intro .introClaimTop.position {
+  -ms-transform: translate(-50%, -205%);
+      transform: translate(-50%, -205%);
+}
+#expand-workspace .intro .introClaimTop.hide {
+  opacity: 0;
+}
+#expand-workspace .intro .introClaimTop.deActive {
+  -ms-transform: translate(-50%, -130%);
+      transform: translate(-50%, -130%);
+  opacity: 0;
+}
+#expand-workspace .intro .introText {
+  transition: all .5s ease;
+  width: 92%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+}
+#expand-workspace .intro .introText.position {
+  -ms-transform: translate(-49%, -24%);
+      transform: translate(-49%, -24%);
+}
+#expand-workspace .intro .introText.hide {
+  opacity: 0;
+}
+@media screen and (min-aspect-ratio: 71 / 100) {
+  #expand-workspace .container {
+    transition: opacity 0.5s ease;
+    width: 100%;
+    max-width: 720px;
+    max-height: 1036px;
+    height: 100%;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+  #expand-workspace .container .static {
+    left: 7%;
+    width: 86%;
+    top: -4%;
+  }
+  #expand-workspace .container .static .logo {
+    width: 17.3611111111%;
+    top: 94%;
+    left: 14%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+  #expand-workspace .container .static .logo2 {
+    width: 27.0833333333%;
+    top: 9%;
+    left: 18%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+  #expand-workspace .container .static .pkt {
+    width: 37.6388888889%;
+    top: 75%;
+    left: 81%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+  #expand-workspace .container .static .claim {
+    width: 23.8888888889%;
+    top: 12.5%;
+    left: 84%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+  #expand-workspace .container .animationTranslate {
+    animation: translate 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .animationRotate {
+    animation: rotate 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .animationHead {
+    animation: head 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneOne, #expand-workspace .container .sceneTwo, #expand-workspace .container .sceneThree, #expand-workspace .container .sceneFour, #expand-workspace .container .sceneFive {
+    transition: all .4s ease;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+  #expand-workspace .container .sceneOne.active, #expand-workspace .container .sceneTwo.active, #expand-workspace .container .sceneThree.active, #expand-workspace .container .sceneFour.active, #expand-workspace .container .sceneFive.active {
+    opacity: 1;
+  }
+  #expand-workspace .container .sceneOne .prod {
+    width: 66.6666666667%;
+    height: auto;
+    top: 71.5%;
+    left: 33.9%;
+    transition: all .4s ease;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+  #expand-workspace .container .sceneOne .head {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 8.4722222222%;
+    height: auto;
+    top: 67.7%;
+    left: 49.7%;
+  }
+  #expand-workspace .container .sceneOne .animationHead {
+    animation: head 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneOne .leaf1 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 5.8333333333%;
+    height: auto;
+    top: 60%;
+    left: 1.8%;
+  }
+  #expand-workspace .container .sceneOne .leaf2 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 6.1111111111%;
+    height: auto;
+    top: 63%;
+    left: 6.3%;
+  }
+  #expand-workspace .container .sceneOne .leaf3 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 6.6666666667%;
+    height: auto;
+    top: 84%;
+    left: 11%;
+  }
+  #expand-workspace .container .sceneOne .leaf4 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 9.4444444444%;
+    height: auto;
+    top: 84%;
+    left: 27%;
+  }
+  #expand-workspace .container .sceneOne .leaf5 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 7.5%;
+    height: auto;
+    top: 94%;
+    left: 39%;
+  }
+  #expand-workspace .container .sceneOne .leaf6 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 7.5%;
+    height: auto;
+    top: 2%;
+    left: 53%;
+  }
+  #expand-workspace .container .sceneOne .leaf7 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 20.8333333333%;
+    height: auto;
+    top: 14%;
+    left: 34%;
+  }
+  #expand-workspace .container .sceneOne .leaf8 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 19.3055555556%;
+    height: auto;
+    top: 51%;
+    left: 90%;
+  }
+  #expand-workspace .container .sceneOne .leaf9 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 5.9722222222%;
+    height: auto;
+    top: 18%;
+    left: 75%;
+    z-index: 4;
+  }
+  #expand-workspace .container .sceneTwo .prod {
+    width: 59.0277777778%;
+    height: auto;
+    top: 70.5%;
+    left: 35.4%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+  #expand-workspace .container .sceneTwo .head {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 9.1666666667%;
+    height: auto;
+    top: 68.9%;
+    left: 3.5%;
+  }
+  #expand-workspace .container .sceneTwo .animationHead {
+    animation: head 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneTwo .animationRotate {
+    animation: rotate 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneTwo .nut {
+    -ms-transform-origin: top right;
+        transform-origin: top right;
+    transition: all .4s ease;
+    width: 5.2777777778%;
+    height: auto;
+    top: 67.5%;
+    left: 16%;
+  }
+  #expand-workspace .container .sceneTwo .nut2 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 8.1944444444%;
+    height: auto;
+    top: -2%;
+    left: 60%;
+  }
+  #expand-workspace .container .sceneTwo .nut3 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 9.7222222222%;
+    height: auto;
+    top: 95%;
+    left: 39%;
+  }
+  #expand-workspace .container .sceneTwo .nut3.animationTranslate {
+    animation: translate2 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneTwo .nut4 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 9.5833333333%;
+    height: auto;
+    top: 77%;
+    left: 15%;
+  }
+  #expand-workspace .container .sceneTwo .nut5 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 10.2777777778%;
+    height: auto;
+    top: 87%;
+    left: 89%;
+  }
+  #expand-workspace .container .sceneTwo .nut6 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 5.9722222222%;
+    height: auto;
+    top: 81%;
+    left: 4%;
+  }
+  #expand-workspace .container .sceneTwo .straw {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 10.5555555556%;
+    height: auto;
+    top: 60%;
+    left: 6%;
+  }
+  #expand-workspace .container .sceneTwo .straw2 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 22.6388888889%;
+    height: auto;
+    top: 10%;
+    left: 44%;
+  }
+  #expand-workspace .container .sceneThree .prod {
+    width: 52.6388888889%;
+    height: auto;
+    top: 73.5%;
+    left: 27.4%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+  #expand-workspace .container .sceneThree .head {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 9.5833333333%;
+    height: auto;
+    top: 73.9%;
+    left: 32%;
+  }
+  #expand-workspace .container .sceneThree .animationHead {
+    animation: head 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneThree .goat {
+    transition: all .4s ease;
+    width: 18.6111111111%;
+    height: auto;
+    top: 78.9%;
+    left: 20.5%;
+  }
+  #expand-workspace .container .sceneThree .animationRotate {
+    animation: rotate 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneThree .onion1 {
+    -ms-transform-origin: top right;
+        transform-origin: top right;
+    transition: all .4s ease;
+    width: 4.8611111111%;
+    height: auto;
+    top: 80.5%;
+    left: 1%;
+  }
+  #expand-workspace .container .sceneThree .onion1.animationTranslate {
+    animation: translate2 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneThree .cheese {
+    -ms-transform-origin: top left;
+        transform-origin: top left;
+    transition: all .4s ease;
+    width: 28.6111111111%;
+    height: auto;
+    top: 94.5%;
+    left: 39%;
+  }
+  #expand-workspace .container .sceneThree .onion2 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 4.7222222222%;
+    height: auto;
+    top: 75.5%;
+    left: 1%;
+  }
+  #expand-workspace .container .sceneThree .onion3 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 19.8611111111%;
+    height: auto;
+    top: 56%;
+    left: 4%;
+  }
+  #expand-workspace .container .sceneThree .onion4 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 10.2777777778%;
+    height: auto;
+    top: 17%;
+    left: 32%;
+  }
+  #expand-workspace .container .sceneThree .onion4.animationTranslate {
+    animation: translate2 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneThree .onion5 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 8.8888888889%;
+    height: auto;
+    top: 69%;
+    left: 53%;
+  }
+  #expand-workspace .container .sceneThree .onion6 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 6.8055555556%;
+    height: auto;
+    top: 2%;
+    left: 65%;
+  }
+  #expand-workspace .container .sceneThree .onion7 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 8.6111111111%;
+    height: auto;
+    top: 86%;
+    left: 90%;
+  }
+  #expand-workspace .container .sceneFour .prod {
+    width: 52.6388888889%;
+    height: auto;
+    top: 71%;
+    left: 33%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+  #expand-workspace .container .sceneFour .head {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 9.5833333333%;
+    height: auto;
+    top: 71.9%;
+    left: 4.5%;
+  }
+  #expand-workspace .container .sceneFour .animationHead {
+    animation: head 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneFour .animationTranslate {
+    animation: translate 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneFour .caramel1 {
+    -ms-transform-origin: top right;
+        transform-origin: top right;
+    transition: all .4s ease;
+    width: 31.25%;
+    height: auto;
+    top: 52.5%;
+    left: 0.5%;
+    z-index: 0;
+  }
+  #expand-workspace .container .sceneFour .caramel2 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 36.1111111111%;
+    height: auto;
+    top: 80.5%;
+    left: 20.2%;
+  }
+  #expand-workspace .container .sceneFour .caramel2.animationTranslate {
+    animation: translate2 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneFour .salt1 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 50%;
+    height: auto;
+    top: 54%;
+    left: 0%;
+  }
+  #expand-workspace .container .sceneFour .salt3 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 8.3333333333%;
+    height: auto;
+    top: 68%;
+    left: 93%;
+  }
+  #expand-workspace .container .sceneFour .salt3.animationTranslate {
+    animation: translate2 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneFour .salt4 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 13.1944444444%;
+    height: auto;
+    top: 2.8%;
+    left: 56.5%;
+  }
+  #expand-workspace .container .sceneFour .salt4.animationTranslate {
+    animation: translate2 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneFour .salt5 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 13.1944444444%;
+    height: auto;
+    top: 92.8%;
+    left: 32.3%;
+  }
+  #expand-workspace .container .sceneFive .logo3 {
+    width: 12.2222222222%;
+    top: 94%;
+    left: 32%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+  #expand-workspace .container .sceneFive .prod {
+    width: 67.7777777778%;
+    height: auto;
+    top: 69%;
+    left: 35%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+  #expand-workspace .container .sceneFive .head {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 10.2777777778%;
+    height: auto;
+    top: 70%;
+    left: 46.5%;
+    z-index: 2;
+  }
+  #expand-workspace .container .sceneFive .animationHead {
+    animation: head 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneFive .animationRotate {
+    animation: rotate 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneFive .plant1 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 17.0833333333%;
+    height: auto;
+    top: 52.5%;
+    left: 19%;
+    z-index: 1;
+  }
+  #expand-workspace .container .sceneFive .plant2 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 11.6666666667%;
+    height: auto;
+    top: 72.5%;
+    left: 1.2%;
+  }
+  #expand-workspace .container .sceneFive .plant3 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 36.9444444444%;
+    height: auto;
+    top: 110%;
+    left: 39%;
+  }
+  #expand-workspace .container .sceneFive .beet {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 15.9722222222%;
+    height: auto;
+    top: 80%;
+    left: 1%;
+  }
+  #expand-workspace .container .sceneFive .beetBig {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 24.0277777778%;
+    height: auto;
+    top: -6%;
+    left: 38.5%;
+  }
+  #expand-workspace .container .sceneFive .carrot {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 6.8055555556%;
+    height: auto;
+    top: 66.8%;
+    left: 2.3%;
+  }
+  #expand-workspace .container .sceneFive .carrot2 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 6.5277777778%;
+    height: auto;
+    top: 61.8%;
+    left: 4.3%;
+  }
+  #expand-workspace .leaf7 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 20.8333333333%;
+    height: auto;
+    top: 14%;
+    left: 34%;
+    z-index: -1;
+  }
+  #expand-workspace .leaf8 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 19.3055555556%;
+    height: auto;
+    top: 51%;
+    left: 90%;
+    z-index: -1;
+  }
+  #expand-workspace .leaf8.animationRotate {
+    animation: rotate 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .straw2 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 22.6388888889%;
+    height: auto;
+    top: 10%;
+    left: 44%;
+    z-index: -1;
+  }
+  #expand-workspace .straw2.animationTranslate {
+    animation: translate2 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .onionBig {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 31.5277777778%;
+    height: auto;
+    top: 10%;
+    left: 39%;
+    z-index: -1;
+  }
+  #expand-workspace .carmelBig {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 31.5277777778%;
+    height: auto;
+    top: 4%;
+    left: 38%;
+    z-index: -1;
+  }
+  #expand-workspace .carmelBig .animationTranslate {
+    animation: translate 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .plantBig {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 44.4444444444%;
+    height: auto;
+    top: 6%;
+    left: 27%;
+    z-index: -1;
+  }
+  #expand-workspace .cta {
+    width: 31.8055555556%;
+    height: auto;
+    top: 94.7%;
+    left: 74%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    z-index: 4;
+  }
+  #expand-workspace .animationRotate {
+    animation: rotate 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .animationTranslate {
+    animation: translate 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .arrow {
+    transition: all .4s ease;
+    width: 17.9166666667%;
+    height: auto;
+    top: 93.5%;
+    left: 80%;
+    z-index: 4;
+  }
+  #expand-workspace .animArrow {
+    animation: arrow 2.5s ease-in-out infinite;
+  }
+}
+@media screen and (max-aspect-ratio: 51 / 100) {
+  #expand-workspace .static {
+    left: 7%;
+    width: 86%;
+    top: -4%;
+  }
+  #expand-workspace .static .logo {
+    width: 17.3611111111%;
+    top: 94%;
+    left: 14%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+  #expand-workspace .static .logo2 {
+    width: 27.0833333333%;
+    top: 10%;
+    left: 18%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+  #expand-workspace .static .logo3 {
+    width: 12.2222222222%;
+    top: 94%;
+    left: 32%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+  #expand-workspace .static .pkt {
+    width: 37.6388888889%;
+    top: 75%;
+    left: 79%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+  #expand-workspace .static .claim {
+    width: 23.8888888889%;
+    top: 12.5%;
+    left: 84%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+  #expand-workspace .bg {
+    transition: all .5s ease;
+    width: auto;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    z-index: 0;
+  }
+  #expand-workspace .bg.position {
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+  #expand-workspace .container {
+    width: 100%;
+    height: 70%;
+    z-index: 1;
+    position: absolute;
+    top: 14%;
+    left: 0;
+  }
+  #expand-workspace .container .animationTranslate {
+    animation: translate 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .animationRotate {
+    animation: rotate 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneOne, #expand-workspace .container .sceneTwo, #expand-workspace .container .sceneThree, #expand-workspace .container .sceneFour, #expand-workspace .container .sceneFive {
+    transition: all .4s ease;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+  #expand-workspace .container .sceneOne.active, #expand-workspace .container .sceneTwo.active, #expand-workspace .container .sceneThree.active, #expand-workspace .container .sceneFour.active, #expand-workspace .container .sceneFive.active {
+    opacity: 1;
+  }
+  #expand-workspace .container .sceneOne .prod {
+    width: 66.6666666667%;
+    height: auto;
+    top: 71.5%;
+    left: 33.9%;
+    transition: all .4s ease;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+  #expand-workspace .container .sceneOne .head {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 8.4722222222%;
+    height: auto;
+    top: 67.7%;
+    left: 49.7%;
+  }
+  #expand-workspace .container .sceneOne .animationHead {
+    animation: head 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneOne .leaf1 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 5.8333333333%;
+    height: auto;
+    top: 60%;
+    left: 1.8%;
+  }
+  #expand-workspace .container .sceneOne .leaf2 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 6.1111111111%;
+    height: auto;
+    top: 63%;
+    left: 6.3%;
+  }
+  #expand-workspace .container .sceneOne .leaf3 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 6.6666666667%;
+    height: auto;
+    top: 84%;
+    left: 11%;
+  }
+  #expand-workspace .container .sceneOne .leaf4 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 9.4444444444%;
+    height: auto;
+    top: 84%;
+    left: 27%;
+  }
+  #expand-workspace .container .sceneOne .leaf5 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 7.5%;
+    height: auto;
+    top: 94%;
+    left: 39%;
+  }
+  #expand-workspace .container .sceneOne .leaf6 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 7.5%;
+    height: auto;
+    top: 2%;
+    left: 53%;
+  }
+  #expand-workspace .container .sceneOne .leaf7 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 20.8333333333%;
+    height: auto;
+    top: 14%;
+    left: 34%;
+  }
+  #expand-workspace .container .sceneOne .leaf8 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 19.3055555556%;
+    height: auto;
+    top: 51%;
+    left: 90%;
+  }
+  #expand-workspace .container .sceneOne .leaf9 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 5.9722222222%;
+    height: auto;
+    top: 18%;
+    left: 75%;
+    z-index: 4;
+  }
+  #expand-workspace .container .sceneTwo .prod {
+    width: 59.0277777778%;
+    height: auto;
+    top: 70.5%;
+    left: 35.4%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+  #expand-workspace .container .sceneTwo .head {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 9.1666666667%;
+    height: auto;
+    top: 68.9%;
+    left: 3.5%;
+  }
+  #expand-workspace .container .sceneTwo .animationHead {
+    animation: head 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneTwo .animationRotate {
+    animation: rotate 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneTwo .nut {
+    -ms-transform-origin: top right;
+        transform-origin: top right;
+    transition: all .4s ease;
+    width: 5.2777777778%;
+    height: auto;
+    top: 67.5%;
+    left: 16%;
+  }
+  #expand-workspace .container .sceneTwo .nut2 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 8.1944444444%;
+    height: auto;
+    top: -2%;
+    left: 60%;
+  }
+  #expand-workspace .container .sceneTwo .nut3 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 9.7222222222%;
+    height: auto;
+    top: 95%;
+    left: 39%;
+  }
+  #expand-workspace .container .sceneTwo .nut3.animationTranslate {
+    animation: translate2 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneTwo .nut4 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 9.5833333333%;
+    height: auto;
+    top: 77%;
+    left: 15%;
+  }
+  #expand-workspace .container .sceneTwo .nut5 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 10.2777777778%;
+    height: auto;
+    top: 87%;
+    left: 89%;
+  }
+  #expand-workspace .container .sceneTwo .nut6 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 5.9722222222%;
+    height: auto;
+    top: 81%;
+    left: 4%;
+  }
+  #expand-workspace .container .sceneTwo .straw {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 10.5555555556%;
+    height: auto;
+    top: 60%;
+    left: 6%;
+  }
+  #expand-workspace .container .sceneTwo .straw2 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 22.6388888889%;
+    height: auto;
+    top: 10%;
+    left: 44%;
+  }
+  #expand-workspace .container .sceneThree .prod {
+    width: 52.6388888889%;
+    height: auto;
+    top: 73.5%;
+    left: 27.4%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+  #expand-workspace .container .sceneThree .head {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 9.5833333333%;
+    height: auto;
+    top: 73.9%;
+    left: 32%;
+  }
+  #expand-workspace .container .sceneThree .goat {
+    transition: all .4s ease;
+    width: 18.6111111111%;
+    height: auto;
+    top: 78.9%;
+    left: 20.5%;
+  }
+  #expand-workspace .container .sceneThree .animationHead {
+    animation: head 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneThree .animationRotate {
+    animation: rotate 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneThree .onion1 {
+    -ms-transform-origin: top right;
+        transform-origin: top right;
+    transition: all .4s ease;
+    width: 4.8611111111%;
+    height: auto;
+    top: 80.5%;
+    left: 1%;
+  }
+  #expand-workspace .container .sceneThree .onion1.animationTranslate {
+    animation: translate2 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneThree .cheese {
+    -ms-transform-origin: top left;
+        transform-origin: top left;
+    transition: all .4s ease;
+    width: 28.6111111111%;
+    height: auto;
+    top: 94.5%;
+    left: 39%;
+  }
+  #expand-workspace .container .sceneThree .onion2 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 4.7222222222%;
+    height: auto;
+    top: 75.5%;
+    left: 1%;
+  }
+  #expand-workspace .container .sceneThree .onion3 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 19.8611111111%;
+    height: auto;
+    top: 56%;
+    left: 4%;
+  }
+  #expand-workspace .container .sceneThree .onion4 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 10.2777777778%;
+    height: auto;
+    top: 17%;
+    left: 32%;
+  }
+  #expand-workspace .container .sceneThree .onion4.animationTranslate {
+    animation: translate2 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneThree .onion5 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 8.8888888889%;
+    height: auto;
+    top: 69%;
+    left: 53%;
+  }
+  #expand-workspace .container .sceneThree .onion6 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 6.8055555556%;
+    height: auto;
+    top: 2%;
+    left: 65%;
+  }
+  #expand-workspace .container .sceneThree .onion7 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 8.6111111111%;
+    height: auto;
+    top: 86%;
+    left: 90%;
+  }
+  #expand-workspace .container .sceneFour .prod {
+    width: 52.6388888889%;
+    height: auto;
+    top: 71%;
+    left: 33%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+  #expand-workspace .container .sceneFour .head {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 9.5833333333%;
+    height: auto;
+    top: 71.9%;
+    left: 4.5%;
+  }
+  #expand-workspace .container .sceneFour .animationHead {
+    animation: head 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneFour .animationTranslate {
+    animation: translate 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneFour .caramel1 {
+    -ms-transform-origin: top right;
+        transform-origin: top right;
+    transition: all .4s ease;
+    width: 31.25%;
+    height: auto;
+    top: 52.5%;
+    left: 0.5%;
+    z-index: 0;
+  }
+  #expand-workspace .container .sceneFour .caramel2 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 36.1111111111%;
+    height: auto;
+    top: 80.5%;
+    left: 20.2%;
+  }
+  #expand-workspace .container .sceneFour .caramel2.animationTranslate {
+    animation: translate2 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneFour .salt1 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 50%;
+    height: auto;
+    top: 54%;
+    left: 0%;
+  }
+  #expand-workspace .container .sceneFour .salt3 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 8.3333333333%;
+    height: auto;
+    top: 68%;
+    left: 93%;
+  }
+  #expand-workspace .container .sceneFour .salt3.animationTranslate {
+    animation: translate2 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneFour .salt4 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 13.1944444444%;
+    height: auto;
+    top: 2.8%;
+    left: 56.5%;
+  }
+  #expand-workspace .container .sceneFour .salt4.animationTranslate {
+    animation: translate2 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneFour .salt5 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 13.1944444444%;
+    height: auto;
+    top: 92.8%;
+    left: 32.3%;
+  }
+  #expand-workspace .container .sceneFive .logo3 {
+    width: 12.2222222222%;
+    top: 94%;
+    left: 32%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+  #expand-workspace .container .sceneFive .prod {
+    width: 67.7777777778%;
+    height: auto;
+    top: 69%;
+    left: 35%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+  #expand-workspace .container .sceneFive .head {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 10.2777777778%;
+    height: auto;
+    top: 70%;
+    left: 46.5%;
+    z-index: 2;
+  }
+  #expand-workspace .container .sceneFive .animationHead {
+    animation: head 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneFive .animationRotate {
+    animation: rotate 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneFive .plant1 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 17.0833333333%;
+    height: auto;
+    top: 52.5%;
+    left: 19%;
+    z-index: 1;
+  }
+  #expand-workspace .container .sceneFive .plant2 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 11.6666666667%;
+    height: auto;
+    top: 72.5%;
+    left: 1.2%;
+  }
+  #expand-workspace .container .sceneFive .plant3 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 36.9444444444%;
+    height: auto;
+    top: 82vh;
+    left: 39%;
+  }
+  #expand-workspace .container .sceneFive .beet {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 15.9722222222%;
+    height: auto;
+    top: 80%;
+    left: 1%;
+  }
+  #expand-workspace .container .sceneFive .beetBig {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 24.0277777778%;
+    height: auto;
+    top: -6%;
+    left: 38.5%;
+  }
+  #expand-workspace .container .sceneFive .carrot {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 6.8055555556%;
+    height: auto;
+    top: 66.8%;
+    left: 2.3%;
+  }
+  #expand-workspace .container .sceneFive .carrot2 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 6.5277777778%;
+    height: auto;
+    top: 61.8%;
+    left: 4.3%;
+  }
+  #expand-workspace .leaf7 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 20.8333333333%;
+    height: auto;
+    top: 14%;
+    left: 34%;
+    z-index: -1;
+  }
+  #expand-workspace .leaf8 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 19.3055555556%;
+    height: auto;
+    top: 51%;
+    left: 90%;
+    z-index: -1;
+  }
+  #expand-workspace .leaf8.animationRotate {
+    animation: rotate 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .straw2 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 22.6388888889%;
+    height: auto;
+    top: 10%;
+    left: 44%;
+    z-index: -1;
+  }
+  #expand-workspace .straw2.animationTranslate {
+    animation: translate2 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .onionBig {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 31.5277777778%;
+    height: auto;
+    top: 10%;
+    left: 39%;
+    z-index: -1;
+  }
+  #expand-workspace .carmelBig {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 31.5277777778%;
+    height: auto;
+    top: 4%;
+    left: 38%;
+    z-index: -1;
+  }
+  #expand-workspace .carmelBig .animationTranslate {
+    animation: translate 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .plantBig {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 44.4444444444%;
+    height: auto;
+    top: 6%;
+    left: 27%;
+    z-index: -1;
+  }
+  #expand-workspace .cta {
+    width: 31.8055555556%;
+    height: auto;
+    top: 94.7%;
+    left: 76%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    z-index: 4;
+  }
+  #expand-workspace .animationRotate {
+    animation: rotate 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .animationTranslate {
+    animation: translate 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .arrow {
+    transition: all .4s ease;
+    width: 17.9166666667%;
+    height: auto;
+    top: 93.2%;
+    left: 80%;
+    z-index: 4;
+  }
+  #expand-workspace .animArrow {
+    animation: arrow 2.5s ease-in-out infinite;
+  }
+}
+@media screen and (max-aspect-ratio: 70 / 100) and (min-aspect-ratio: 52 / 100) {
+  #expand-workspace .container {
+    width: 100%;
+    height: 95%;
+    top: 5%;
+    left: 0;
+    max-width: 720px;
+    max-height: 1036px;
+    z-index: 1;
+    position: absolute;
+  }
+  #expand-workspace .container .static {
+    left: 7%;
+    width: 86%;
+    top: -4%;
+  }
+  #expand-workspace .container .static .logo {
+    width: 17.3611111111%;
+    top: 94%;
+    left: 14%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+  #expand-workspace .container .static .logo2 {
+    width: 27.0833333333%;
+    top: 10%;
+    left: 18%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+  #expand-workspace .container .static .logo3 {
+    width: 12.2222222222%;
+    top: 94%;
+    left: 32%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+  #expand-workspace .container .static .pkt {
+    width: 37.6388888889%;
+    top: 75%;
+    left: 79%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+  #expand-workspace .container .static .claim {
+    width: 23.8888888889%;
+    top: 12.5%;
+    left: 84%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+  #expand-workspace .container .animationTranslate {
+    animation: translate 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .animationRotate {
+    animation: rotate 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneOne, #expand-workspace .container .sceneTwo, #expand-workspace .container .sceneThree, #expand-workspace .container .sceneFour, #expand-workspace .container .sceneFive {
+    transition: all .4s ease;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+  #expand-workspace .container .sceneOne.active, #expand-workspace .container .sceneTwo.active, #expand-workspace .container .sceneThree.active, #expand-workspace .container .sceneFour.active, #expand-workspace .container .sceneFive.active {
+    opacity: 1;
+  }
+  #expand-workspace .container .sceneOne .prod {
+    width: 66.6666666667%;
+    height: auto;
+    top: 71.5%;
+    left: 33.9%;
+    transition: all .4s ease;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+  #expand-workspace .container .sceneOne .head {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 8.4722222222%;
+    height: auto;
+    top: 67.7%;
+    left: 49.7%;
+  }
+  #expand-workspace .container .sceneOne .animationHead {
+    animation: head 3s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneOne .leaf1 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 5.8333333333%;
+    height: auto;
+    top: 60%;
+    left: 1.8%;
+  }
+  #expand-workspace .container .sceneOne .leaf2 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 6.1111111111%;
+    height: auto;
+    top: 63%;
+    left: 6.3%;
+  }
+  #expand-workspace .container .sceneOne .leaf3 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 6.6666666667%;
+    height: auto;
+    top: 84%;
+    left: 11%;
+  }
+  #expand-workspace .container .sceneOne .leaf4 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 9.4444444444%;
+    height: auto;
+    top: 84%;
+    left: 27%;
+  }
+  #expand-workspace .container .sceneOne .leaf5 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 7.5%;
+    height: auto;
+    top: 94%;
+    left: 39%;
+  }
+  #expand-workspace .container .sceneOne .leaf6 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 7.5%;
+    height: auto;
+    top: 2%;
+    left: 53%;
+  }
+  #expand-workspace .container .sceneOne .leaf7 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 20.8333333333%;
+    height: auto;
+    top: 14%;
+    left: 34%;
+  }
+  #expand-workspace .container .sceneOne .leaf8 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 19.3055555556%;
+    height: auto;
+    top: 51%;
+    left: 90%;
+  }
+  #expand-workspace .container .sceneOne .leaf9 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 5.9722222222%;
+    height: auto;
+    top: 18%;
+    left: 75%;
+    z-index: 4;
+  }
+  #expand-workspace .container .sceneTwo .prod {
+    width: 59.0277777778%;
+    height: auto;
+    top: 70.5%;
+    left: 35.4%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+  #expand-workspace .container .sceneTwo .head {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 9.1666666667%;
+    height: auto;
+    top: 68.9%;
+    left: 3.5%;
+  }
+  #expand-workspace .container .sceneTwo .animationHead {
+    animation: head 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneTwo .animationRotate {
+    animation: rotate 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneTwo .nut {
+    -ms-transform-origin: top right;
+        transform-origin: top right;
+    transition: all .4s ease;
+    width: 5.2777777778%;
+    height: auto;
+    top: 67.5%;
+    left: 16%;
+  }
+  #expand-workspace .container .sceneTwo .nut2 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 8.1944444444%;
+    height: auto;
+    top: -2%;
+    left: 60%;
+  }
+  #expand-workspace .container .sceneTwo .nut3 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 9.7222222222%;
+    height: auto;
+    top: 95%;
+    left: 39%;
+  }
+  #expand-workspace .container .sceneTwo .nut3.animationTranslate {
+    animation: translate2 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneTwo .nut4 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 9.5833333333%;
+    height: auto;
+    top: 77%;
+    left: 15%;
+  }
+  #expand-workspace .container .sceneTwo .nut5 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 10.2777777778%;
+    height: auto;
+    top: 87%;
+    left: 89%;
+  }
+  #expand-workspace .container .sceneTwo .nut6 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 5.9722222222%;
+    height: auto;
+    top: 81%;
+    left: 4%;
+  }
+  #expand-workspace .container .sceneTwo .straw {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 10.5555555556%;
+    height: auto;
+    top: 60%;
+    left: 6%;
+  }
+  #expand-workspace .container .sceneTwo .straw2 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 22.6388888889%;
+    height: auto;
+    top: 10%;
+    left: 44%;
+  }
+  #expand-workspace .container .sceneThree .prod {
+    width: 52.6388888889%;
+    height: auto;
+    top: 73.5%;
+    left: 27.4%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+  #expand-workspace .container .sceneThree .head {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 9.5833333333%;
+    height: auto;
+    top: 73.9%;
+    left: 32%;
+  }
+  #expand-workspace .container .sceneThree .goat {
+    transition: all .4s ease;
+    width: 18.6111111111%;
+    height: auto;
+    top: 78.9%;
+    left: 20.5%;
+  }
+  #expand-workspace .container .sceneThree .animationHead {
+    animation: head 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneThree .animationRotate {
+    animation: rotate 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneThree .onion1 {
+    -ms-transform-origin: top right;
+        transform-origin: top right;
+    transition: all .4s ease;
+    width: 4.8611111111%;
+    height: auto;
+    top: 80.5%;
+    left: 1%;
+  }
+  #expand-workspace .container .sceneThree .onion1.animationTranslate {
+    animation: translate2 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneThree .cheese {
+    -ms-transform-origin: top left;
+        transform-origin: top left;
+    transition: all .4s ease;
+    width: 28.6111111111%;
+    height: auto;
+    top: 94.5%;
+    left: 39%;
+  }
+  #expand-workspace .container .sceneThree .onion2 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 4.7222222222%;
+    height: auto;
+    top: 75.5%;
+    left: 1%;
+  }
+  #expand-workspace .container .sceneThree .onion3 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 19.8611111111%;
+    height: auto;
+    top: 56%;
+    left: 4%;
+  }
+  #expand-workspace .container .sceneThree .onion4 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 10.2777777778%;
+    height: auto;
+    top: 17%;
+    left: 32%;
+  }
+  #expand-workspace .container .sceneThree .onion4.animationTranslate {
+    animation: translate2 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneThree .onion5 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 8.8888888889%;
+    height: auto;
+    top: 69%;
+    left: 53%;
+  }
+  #expand-workspace .container .sceneThree .onion6 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 6.8055555556%;
+    height: auto;
+    top: 2%;
+    left: 65%;
+  }
+  #expand-workspace .container .sceneThree .onion7 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 8.6111111111%;
+    height: auto;
+    top: 86%;
+    left: 90%;
+  }
+  #expand-workspace .container .sceneFour .prod {
+    width: 52.6388888889%;
+    height: auto;
+    top: 71%;
+    left: 33%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+  #expand-workspace .container .sceneFour .head {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 9.5833333333%;
+    height: auto;
+    top: 71.9%;
+    left: 4.5%;
+  }
+  #expand-workspace .container .sceneFour .animationHead {
+    animation: head 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneFour .animationTranslate {
+    animation: translate 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneFour .caramel1 {
+    -ms-transform-origin: top right;
+        transform-origin: top right;
+    transition: all .4s ease;
+    width: 31.25%;
+    height: auto;
+    top: 52.5%;
+    left: 0.5%;
+    z-index: 0;
+  }
+  #expand-workspace .container .sceneFour .caramel2 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 36.1111111111%;
+    height: auto;
+    top: 80.5%;
+    left: 20.2%;
+  }
+  #expand-workspace .container .sceneFour .caramel2.animationTranslate {
+    animation: translate2 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneFour .salt1 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 50%;
+    height: auto;
+    top: 54%;
+    left: 0%;
+  }
+  #expand-workspace .container .sceneFour .salt3 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 8.3333333333%;
+    height: auto;
+    top: 68%;
+    left: 93%;
+  }
+  #expand-workspace .container .sceneFour .salt3.animationTranslate {
+    animation: translate2 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneFour .salt4 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 13.1944444444%;
+    height: auto;
+    top: 2.8%;
+    left: 56.5%;
+  }
+  #expand-workspace .container .sceneFour .salt4.animationTranslate {
+    animation: translate2 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneFour .salt5 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 13.1944444444%;
+    height: auto;
+    top: 92.8%;
+    left: 32.3%;
+  }
+  #expand-workspace .container .sceneFive .logo3 {
+    width: 12.2222222222%;
+    top: 94%;
+    left: 32%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+  #expand-workspace .container .sceneFive .prod {
+    width: 67.7777777778%;
+    height: auto;
+    top: 69%;
+    left: 35%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+  #expand-workspace .container .sceneFive .head {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 10.2777777778%;
+    height: auto;
+    top: 70%;
+    left: 46.5%;
+    z-index: 2;
+  }
+  #expand-workspace .container .sceneFive .animationHead {
+    animation: head 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneFive .animationRotate {
+    animation: rotate 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .container .sceneFive .plant1 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 17.0833333333%;
+    height: auto;
+    top: 52.5%;
+    left: 19%;
+    z-index: 1;
+  }
+  #expand-workspace .container .sceneFive .plant2 {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 11.6666666667%;
+    height: auto;
+    top: 72.5%;
+    left: 1.2%;
+  }
+  #expand-workspace .container .sceneFive .plant3 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 36.9444444444%;
+    height: auto;
+    top: 89vh;
+    left: 39%;
+  }
+  #expand-workspace .container .sceneFive .beet {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 15.9722222222%;
+    height: auto;
+    top: 80%;
+    left: 1%;
+  }
+  #expand-workspace .container .sceneFive .beetBig {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 24.0277777778%;
+    height: auto;
+    top: -6%;
+    left: 38.5%;
+  }
+  #expand-workspace .container .sceneFive .carrot {
+    -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+    transition: all .4s ease;
+    width: 6.8055555556%;
+    height: auto;
+    top: 66.8%;
+    left: 2.3%;
+  }
+  #expand-workspace .container .sceneFive .carrot2 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 6.5277777778%;
+    height: auto;
+    top: 61.8%;
+    left: 4.3%;
+  }
+  #expand-workspace .leaf7 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 20.8333333333%;
+    height: auto;
+    top: 14%;
+    left: 34%;
+    z-index: -1;
+  }
+  #expand-workspace .leaf8 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 19.3055555556%;
+    height: auto;
+    top: 51%;
+    left: 90%;
+    z-index: -1;
+  }
+  #expand-workspace .leaf8.animationRotate {
+    animation: rotate 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .straw2 {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 22.6388888889%;
+    height: auto;
+    top: 10%;
+    left: 44%;
+    z-index: -1;
+  }
+  #expand-workspace .straw2.animationTranslate {
+    animation: translate2 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .onionBig {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 31.5277777778%;
+    height: auto;
+    top: 10%;
+    left: 39%;
+    z-index: -1;
+  }
+  #expand-workspace .carmelBig {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 31.5277777778%;
+    height: auto;
+    top: 4%;
+    left: 38%;
+    z-index: -1;
+  }
+  #expand-workspace .carmelBig .animationTranslate {
+    animation: translate 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .plantBig {
+    -ms-transform-origin: bottom right;
+        transform-origin: bottom right;
+    transition: all .4s ease;
+    width: 44.4444444444%;
+    height: auto;
+    top: 6%;
+    left: 27%;
+    z-index: -1;
+  }
+  #expand-workspace .cta {
+    width: 31.8055555556%;
+    height: auto;
+    top: 94.7%;
+    left: 74%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    z-index: 4;
+  }
+  #expand-workspace .animationRotate {
+    animation: rotate 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .animationTranslate {
+    animation: translate 2.5s ease-in-out infinite;
+  }
+  #expand-workspace .arrow {
+    transition: all .4s ease;
+    width: 17.9166666667%;
+    height: auto;
+    top: 93.5%;
+    left: 80%;
+    z-index: 4;
+  }
+  #expand-workspace .animArrow {
+    animation: arrow 2.5s ease-in-out infinite;
+  }
+}
+
+#socials-wrapper {
+  position: fixed;
+  width: auto;
+  height: auto;
+  top: 0%;
+  left: 0%;
+  display: none;
+}
+#socials-wrapper svg {
+  position: relative;
+  width: 8vw;
+  height: 8vw;
+  top: 0%;
+  left: 0%;
+  margin: 1vw 0 0 1vw;
+}
+#socials-wrapper svg circle {
+  fill: #fff;
+}
+#socials-wrapper svg path {
+  fill: #000;
+}
+
+#close-expand {
+  position: fixed;
+  width: 18%;
+  height: 8%;
+  top: 1%;
+  left: auto;
+  background: url(../../media/expand/close.png?version=0.0) no-repeat 50%;
+  background-size: contain;
+  z-index: 99999999 !important;
+  cursor: pointer;
+  right: 3%;
+}
+
+#device-orientation {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  color: #fff;
+  font-size: 4vw;
+  font-family: helvetica, verdana, arial, sans-serif;
+  line-height: 100vh;
+  z-index: 999999 !important;
+  text-align: center;
+  background-color: #000;
+  background-size: contain;
+  display: none;
+}
+
+@media all and (orientation: landscape) {
+  #device-orientation {
+    display: block;
+  }
+}

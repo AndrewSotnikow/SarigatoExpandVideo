@@ -1,0 +1,35 @@
+#expand-workspace {
+    $width: 100vw;
+    $ratio: 16/9;
+    $height: $width/$ratio;
+    @include setGeometry($width, $height, 0%, 50%, fixed);
+    @include setTopLeftMargin(0, -0.5*$height);
+    background: #000;
+    overflow: hidden;
+    &.fixed {
+        // #logotype { position: fixed !important; }
+    }
+}
+
+#close-expand {
+    $width: 4vw;
+    $height: 4vw;
+    $margin: 2vw;
+    @include setGeometry($width, $height, auto, $margin, fixed);
+    z-index: 99999999 !important;
+    // background: url('https://4stk.com/sataku/szablon/images/mobile/custom/zamknij.png?version=0.0') no-repeat center center;
+    background: url('media/expand/close.png?version=0.0') no-repeat center center;
+    background-size: cover;
+    cursor: pointer;
+    right: $margin;
+    &:hover {
+        background-image: url('media/expand/close_over.png?version=0.0');
+    }
+}
+
+#player-wrapper-1 {
+    $width: 33vw; $ratio: 16/9;
+    $height: $width/$ratio;
+    @include setGeometry($width, $height, 50%, 50%, absolute);
+    @include setTopLeftMargin(-0.5*$width, -0.5*$height);
+}

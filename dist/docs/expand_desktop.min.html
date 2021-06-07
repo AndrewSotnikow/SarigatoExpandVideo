@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><!-- !important --><!--{base}--><!-- !important --><title>Expand</title><meta charset="utf-8"><link rel="icon" href="data:;base64,iVBORw0KGgo="><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><link rel="stylesheet" href="dist/styles/expand_desktop.min.css?version=0.0"></head><body id="expand" style="visibility: hidden;"><div id="expand-workspace"><div id="player-wrapper-1" class="player-wrapper"></div></div><div id="close-expand"></div><script src="dist/scripts/expand_desktop.min.js?version=0.0"></script><script>if(window.satakuParams !== undefined) {
+                Sataku.invoke();
+            } else {
+                window.addEventListener("message", function(event) {
+                    if(event.data.subject === 'sendSmartData') {
+                        window.satakuParams = event.data.data;
+                        Sataku.invoke();
+                    }
+                }, false);
+            }</script></body></html>
