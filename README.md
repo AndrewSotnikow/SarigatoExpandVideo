@@ -1,8 +1,8 @@
 # Rich Media Expand Video for Zabka
 
 This is complex and responsive rich media creative with css animations for mobile devices.
-Contained five types of products that are automatically rotated. Every product has difference animations and layout.
-This project created with Sataku JS framework, Vanilla JavaScript, SASS and HTML.
+Contains five types of products that automatically rotate. Each product has a different animation and layout.
+This project is created using the Sataku JS framework, vanilla JavaScript, CSS, and HTML.
 Sataku JS framework is used to setup creation on a server.
 
 ## Table of contents
