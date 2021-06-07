@@ -23,7 +23,7 @@ Sataku JS framework is used to setup creation on a server.
 
 ## Setup
 
-This rich media creative created with Sataku JS framework that can't be used outside company.
+This rich media creative using with Sataku JS framework that can't be used outside company.
 In this reason there is no way to setup project without Sataku JS framework.
 
 You are interested in next files:
